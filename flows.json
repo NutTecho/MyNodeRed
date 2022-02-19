@@ -1,0 +1,568 @@
+[
+    {
+        "id": "cc86b9261dd774ca",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ebe1ddb7db2b1d13",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "235674f73e977231",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Verdana,Verdana,Geneva,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Verdana,Verdana,Geneva,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cb2d69799bf8a645",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "3ee79d9ccd3fef33",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "cb2d69799bf8a645",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "d1b40bfe250bcf2e",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://172.23.32.1:4841/freeopcua/server/",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "6d191d67d5fe4a6a",
+        "type": "OpcUa-Item",
+        "z": "cc86b9261dd774ca",
+        "item": "ns=2;i=2;",
+        "datatype": "Int32",
+        "value": "",
+        "name": "GetData",
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "106046975beddddd"
+            ]
+        ]
+    },
+    {
+        "id": "106046975beddddd",
+        "type": "OpcUa-Client",
+        "z": "cc86b9261dd774ca",
+        "endpoint": "d1b40bfe250bcf2e",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "471be5f22185c88a"
+            ]
+        ]
+    },
+    {
+        "id": "d1da7314d988c3fc",
+        "type": "inject",
+        "z": "cc86b9261dd774ca",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "6d191d67d5fe4a6a"
+            ]
+        ]
+    },
+    {
+        "id": "471be5f22185c88a",
+        "type": "debug",
+        "z": "cc86b9261dd774ca",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d5f06e68cee866e3",
+        "type": "inject",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "f81820959540402f"
+            ]
+        ]
+    },
+    {
+        "id": "033a221bb0eefdb4",
+        "type": "http request",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://notify-api.line.me/api/notify",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "eae20c69449928b0"
+            ]
+        ]
+    },
+    {
+        "id": "f81820959540402f",
+        "type": "function",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "func": "msg.token = 'BggmSwVip2mh1PUc9sQusUjS8aUlnwZJQpA2Cs8M3yl';\nmsg.message = 'Hello';\nmsg.stickerPackageId = 1;\nmsg.stickerId  = 106;\n\nmsg.headers = {\n    'content-type' : 'application/x-www-form-urlencoded',\n    'Authorization' : 'Bearer ' + msg.token\n};\n\nmsg.payload = {\n    'message' : msg.message,\n    'stickerPackageId' : msg.stickerPackageId,\n    'stickerId' : msg.stickerId\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "033a221bb0eefdb4"
+            ]
+        ]
+    },
+    {
+        "id": "eae20c69449928b0",
+        "type": "debug",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "47c93b776b14fab5",
+        "type": "inject",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68c486f4c4ae81ea",
+        "type": "http request",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 490,
+        "y": 280,
+        "wires": [
+            [
+                "b62bdd1d41aa81e7"
+            ]
+        ]
+    },
+    {
+        "id": "37c0a6341eadea20",
+        "type": "function",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "func": "msg.method = 'GET';\nmsg.token = 'pS_6QRMqEurX8e-GNbCagzWepxuFDlBO';\nmsg.dataStreamId = 'v0';\nmsg.value = msg.payload;\n\nmsg.url = 'https://blynk.cloud/external/api/update?token=' + msg.token +\n'&' + msg.dataStreamId + '=' + msg.value\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "68c486f4c4ae81ea"
+            ]
+        ]
+    },
+    {
+        "id": "b62bdd1d41aa81e7",
+        "type": "debug",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b0afec616c45c841",
+        "type": "comment",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "Line Notify",
+        "info": "Line Notify PUT ",
+        "x": 140,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b5a2678577ad6b7b",
+        "type": "comment",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "Blynk Send",
+        "info": "Blynk sending data",
+        "x": 150,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4560fe03fee04635",
+        "type": "inject",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "0d62bfcf840e1635"
+            ]
+        ]
+    },
+    {
+        "id": "cec1a25574c720ed",
+        "type": "http request",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "848eca293cd301df"
+            ]
+        ]
+    },
+    {
+        "id": "0d62bfcf840e1635",
+        "type": "function",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "func": "msg.method = 'GET';\nmsg.token = 'pS_6QRMqEurX8e-GNbCagzWepxuFDlBO';\nmsg.dataStreamId = 'v0';\n\nmsg.url = 'https://blynk.cloud/external/api/get?token=' + msg.token +\n'&' + msg.dataStreamId\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "cec1a25574c720ed"
+            ]
+        ]
+    },
+    {
+        "id": "848eca293cd301df",
+        "type": "debug",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "0e301823526a8365",
+        "type": "comment",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "Blynk Read",
+        "info": "Blynk Reading data",
+        "x": 150,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "680fd1af49ef6d20",
+        "type": "ui_slider",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "3ee79d9ccd3fef33",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "d32b1f89f457317b",
+                "d32b1f89f457317b",
+                "37c0a6341eadea20"
+            ]
+        ]
+    },
+    {
+        "id": "d32b1f89f457317b",
+        "type": "ui_gauge",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "",
+        "group": "3ee79d9ccd3fef33",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 650,
+        "y": 200,
+        "wires": []
+    }
+]
