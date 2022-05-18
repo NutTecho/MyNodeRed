@@ -65,8 +65,6 @@
         ],
         "x": 54,
         "y": 599,
-        "w": 572,
-        "h": 142,
         "info": "test"
     },
     {
@@ -88,9 +86,7 @@
             "b0afec616c45c841"
         ],
         "x": 34,
-        "y": 39,
-        "w": 752,
-        "h": 122
+        "y": 39
     },
     {
         "id": "ac9787b46f70e038",
@@ -118,9 +114,7 @@
             "d32b1f89f457317b"
         ],
         "x": 34,
-        "y": 199,
-        "w": 752,
-        "h": 242
+        "y": 199
     },
     {
         "id": "918a016da94047e6",
@@ -142,9 +136,7 @@
             "7b6da3fccca14116"
         ],
         "x": 34,
-        "y": 319,
-        "w": 712,
-        "h": 222
+        "y": 319
     },
     {
         "id": "1bf54cb25f373f45",
@@ -163,9 +155,27 @@
             "471be5f22185c88a"
         ],
         "x": 54,
-        "y": 39,
-        "w": 632,
-        "h": 262
+        "y": 39
+    },
+    {
+        "id": "e46a4f3b10c5a3b0",
+        "type": "group",
+        "z": "ebe1ddb7db2b1d13",
+        "name": "Camera to Line",
+        "style": {
+            "stroke": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "463bbfd6868b4ba3",
+            "1a6f5cf6eea2e6b7",
+            "0f785f873aa00133",
+            "ba904c9849493c1b",
+            "e07fbc27dc343394",
+            "8f43f844915dec5d"
+        ],
+        "x": 54,
+        "y": 499
     },
     {
         "id": "235674f73e977231",
@@ -359,28 +369,6 @@
         "collapse": false
     },
     {
-        "id": "c396ec35b0f67687",
-        "type": "onvif-config",
-        "xaddress": "192.168.43.1",
-        "port": "8080",
-        "timeout": "30",
-        "checkConnectionInterval": "5",
-        "name": "mycamera"
-    },
-    {
-        "id": "c6b46a46.8067f8",
-        "type": "onvif-config",
-        "xaddress": "192.168.1.174",
-        "port": "80",
-        "name": "Hikvision"
-    },
-    {
-        "id": "e6c78b2e.fe4dc8",
-        "type": "onvif-config",
-        "xaddress": "192.168.1.200",
-        "name": "MyCamKitchen"
-    },
-    {
         "id": "34c89ac33f7f975b",
         "type": "ui_group",
         "name": "Web push notifications",
@@ -446,7 +434,7 @@
         "id": "62af3d522a4f79d4",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "172.17.0.2",
+        "broker": "172.17.0.3",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -467,6 +455,41 @@
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
+    },
+    {
+        "id": "ee140e3d.50e31",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 2,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": 30
+    },
+    {
+        "id": "c396ec35b0f67687",
+        "type": "onvif-config",
+        "xaddress": "192.168.43.1",
+        "port": "8080",
+        "timeout": "30",
+        "checkConnectionInterval": "5",
+        "name": "mycamera"
+    },
+    {
+        "id": "c6b46a46.8067f8",
+        "type": "onvif-config",
+        "xaddress": "192.168.1.174",
+        "port": "80",
+        "name": "Hikvision"
+    },
+    {
+        "id": "e6c78b2e.fe4dc8",
+        "type": "onvif-config",
+        "xaddress": "192.168.1.200",
+        "name": "MyCamKitchen"
     },
     {
         "id": "74b69329766d603b",
@@ -1389,21 +1412,6 @@
         ]
     },
     {
-        "id": "569d0223.dcc0cc",
-        "type": "onvif-device",
-        "z": "e6e652e24933c362",
-        "name": "",
-        "deviceConfig": "c396ec35b0f67687",
-        "action": "",
-        "x": 650,
-        "y": 480,
-        "wires": [
-            [
-                "7c39ee64.2d193"
-            ]
-        ]
-    },
-    {
         "id": "7c39ee64.2d193",
         "type": "debug",
         "z": "e6e652e24933c362",
@@ -1416,22 +1424,6 @@
         "x": 810,
         "y": 480,
         "wires": []
-    },
-    {
-        "id": "0f2f16d0e617a7dd",
-        "type": "onvif-imaging",
-        "z": "e6e652e24933c362",
-        "name": "",
-        "deviceConfig": "c396ec35b0f67687",
-        "profile": "",
-        "action": "getImagingSettings",
-        "x": 980,
-        "y": 680,
-        "wires": [
-            [
-                "538ea92079026c89"
-            ]
-        ]
     },
     {
         "id": "d576d399c9cda2ec",
@@ -1492,20 +1484,6 @@
             [
                 "6afd10c2419a365b"
             ]
-        ]
-    },
-    {
-        "id": "6afd10c2419a365b",
-        "type": "onvif-imaging",
-        "z": "e6e652e24933c362",
-        "name": "",
-        "deviceConfig": "c396ec35b0f67687",
-        "profile": "",
-        "action": "",
-        "x": 1380,
-        "y": 680,
-        "wires": [
-            []
         ]
     },
     {
@@ -2159,6 +2137,140 @@
         "x": 650,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "463bbfd6868b4ba3",
+        "type": "http request",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "ip cam",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://ipcam/snapshot.cgi?user=[youruser]&pwd=[yourpass]&res=0",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 310,
+        "y": 600,
+        "wires": [
+            [
+                "1a6f5cf6eea2e6b7",
+                "0f785f873aa00133"
+            ]
+        ]
+    },
+    {
+        "id": "1a6f5cf6eea2e6b7",
+        "type": "file",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "Save image",
+        "filename": "/config/www/cctv/frontdoor.jpg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "e07fbc27dc343394"
+            ]
+        ]
+    },
+    {
+        "id": "0f785f873aa00133",
+        "type": "base64",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 480,
+        "y": 640,
+        "wires": [
+            [
+                "ba904c9849493c1b"
+            ]
+        ]
+    },
+    {
+        "id": "ba904c9849493c1b",
+        "type": "template",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"1920px\" height=\"1080px\" src=\"data:image/jpg;base64,{{{payload}}}\">",
+        "output": "str",
+        "x": 620,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e07fbc27dc343394",
+        "type": "api-call-service",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "line notify",
+        "server": "ee140e3d.50e31",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "line_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"data\":{\"file\":\"/config/www/cctv/frontdoor.jpg\"},\"message\":\"มีคนเปิดประตูหน้าบ้าน\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 640,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f43f844915dec5d",
+        "type": "inject",
+        "z": "ebe1ddb7db2b1d13",
+        "g": "e46a4f3b10c5a3b0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "463bbfd6868b4ba3"
+            ]
+        ]
     },
     {
         "id": "bd456e4e.359d8",
@@ -3645,11 +3757,13 @@
         "wires": [
             [
                 "7505aebdfa128948",
-                "a5bf2326f2b335e7"
+                "a5bf2326f2b335e7",
+                "1a9bae9c40dd6b03"
             ],
             [
                 "7505aebdfa128948",
-                "a5bf2326f2b335e7"
+                "a5bf2326f2b335e7",
+                "3ab4eeeee6eb8488"
             ]
         ]
     },
@@ -3665,7 +3779,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
+        "x": 930,
         "y": 1140,
         "wires": []
     },
@@ -3811,7 +3925,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "switch.motor1",
+        "entityidfilter": "fan.motor1",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -3990,7 +4104,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 560,
         "y": 1160,
         "wires": [
             [
@@ -4207,6 +4321,235 @@
         "y": 1200,
         "wires": [
             [],
+            []
+        ]
+    },
+    {
+        "id": "55c684c25390496c",
+        "type": "ha-entity",
+        "z": "e93a7e25f0e39a23",
+        "name": "DimLight",
+        "server": "055a56be1d55a37f",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "binary_sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "DimLight"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "0",
+        "stateType": "num",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": false,
+        "outputPayload": "0",
+        "outputPayloadType": "num",
+        "x": 140,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84a8f89cf17e4323",
+        "type": "server-state-changed",
+        "z": "e93a7e25f0e39a23",
+        "name": "MOTOR2",
+        "server": "055a56be1d55a37f",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.dimlight",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 340,
+        "y": 1640,
+        "wires": [
+            [
+                "57f7f06f580bd3d9"
+            ],
+            [
+                "57f7f06f580bd3d9"
+            ]
+        ]
+    },
+    {
+        "id": "57f7f06f580bd3d9",
+        "type": "debug",
+        "z": "e93a7e25f0e39a23",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "1a9bae9c40dd6b03",
+        "type": "api-call-service",
+        "z": "e93a7e25f0e39a23",
+        "name": "Line Noti ON",
+        "server": "055a56be1d55a37f",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "line_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"LED is on\",\"title\":\"Your Garage Door Friend\",\"target\":\"platform specific\",\"data\":{\"file\":\"/config/image/Airplane.jpg\",\"stkpkgid\":1,\"stkid\":106}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ab4eeeee6eb8488",
+        "type": "api-call-service",
+        "z": "e93a7e25f0e39a23",
+        "name": "Line Noti OFF",
+        "server": "055a56be1d55a37f",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "line_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"LED is off\",\"title\":\"Your Garage Door Friend\",\"target\":\"platform specific\",\"data\":{\"file\":\"/config/image/Airplane.jpg\",\"stkpkgid\":1,\"stkid\":2}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 760,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "569d0223.dcc0cc",
+        "type": "onvif-device",
+        "z": "e93a7e25f0e39a23",
+        "name": "",
+        "deviceConfig": "c396ec35b0f67687",
+        "action": "",
+        "x": 650,
+        "y": 480,
+        "wires": [
+            [
+                "7c39ee64.2d193"
+            ]
+        ]
+    },
+    {
+        "id": "0f2f16d0e617a7dd",
+        "type": "onvif-imaging",
+        "z": "e93a7e25f0e39a23",
+        "name": "",
+        "deviceConfig": "c396ec35b0f67687",
+        "profile": "",
+        "action": "getImagingSettings",
+        "x": 980,
+        "y": 680,
+        "wires": [
+            [
+                "538ea92079026c89"
+            ]
+        ]
+    },
+    {
+        "id": "6afd10c2419a365b",
+        "type": "onvif-imaging",
+        "z": "e93a7e25f0e39a23",
+        "name": "",
+        "deviceConfig": "c396ec35b0f67687",
+        "profile": "",
+        "action": "",
+        "x": 1380,
+        "y": 680,
+        "wires": [
             []
         ]
     }
