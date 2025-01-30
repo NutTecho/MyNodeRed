@@ -2,7 +2,10 @@
     "name": "MyNodeRed",
     "description": "nodered backup flow",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-dashboard": "3.6.5",
+        "node-red-contrib-modbus": "5.43.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
