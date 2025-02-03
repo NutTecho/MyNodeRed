@@ -43,7 +43,7 @@
         "id": "18cf0a2502a0767f",
         "type": "tab",
         "label": "D3",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -58,7 +58,7 @@
     {
         "id": "10938d45dccd01ac",
         "type": "tab",
-        "label": "Flow 6",
+        "label": "SQL",
         "disabled": true,
         "info": "",
         "env": []
@@ -82,7 +82,7 @@
     {
         "id": "92701a6abe8f79f1",
         "type": "tab",
-        "label": "Flow 4",
+        "label": "UI",
         "disabled": false,
         "info": "",
         "env": []
@@ -99,7 +99,6 @@
             "fill": "#bfdbef"
         },
         "nodes": [
-            "a1428a3e.9b4d78",
             "5f85bc5d.988a14",
             "72e8f0c547cf14e0",
             "084ec3837ab5b6d7",
@@ -195,12 +194,11 @@
             "1a6f5cf6eea2e6b7",
             "0f785f873aa00133",
             "ba904c9849493c1b",
-            "e07fbc27dc343394",
             "8f43f844915dec5d"
         ],
         "x": 54,
         "y": 499,
-        "w": 672,
+        "w": 652,
         "h": 182
     },
     {
@@ -258,20 +256,16 @@
         },
         "nodes": [
             "4cee2e1bc9cd5ed5",
-            "31de9b06fbc6a9c5",
             "6a3a5c413b35a622",
             "dcb7c22fecb8e27b",
-            "2f4f72dc0fdcdef2",
             "2a75fd0ee5f07d3a",
             "ff4c7e0e0fae3b54",
-            "38c3bca056801770",
             "552f429eada488c6",
             "0f0a08adc9ae2ecd",
             "e3858202505b7e4d",
             "dd232266898bae01",
             "447840385a6e1031",
-            "dd5a9dd757ca0179",
-            "428e69e2daa536e5"
+            "dd5a9dd757ca0179"
         ],
         "x": 54,
         "y": 1139,
@@ -303,8 +297,8 @@
             "1528d6ba.7db449",
             "7eafa2f8.041ebc"
         ],
-        "x": 114,
-        "y": 599,
+        "x": 74,
+        "y": 379,
         "w": 812,
         "h": 344
     },
@@ -653,9 +647,33 @@
         "h": 522
     },
     {
+        "id": "4ad3d049edc39322",
+        "type": "group",
+        "z": "18cf0a2502a0767f",
+        "name": "UI group",
+        "style": {
+            "stroke": "#ffcf3f",
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "b97bc1c0.cb899",
+            "718cfd195b411ba8",
+            "ef81b0f02ba7b98d",
+            "3cd4308335f3d205",
+            "ee07ae5804356234",
+            "6382720d6b8f61a1",
+            "85965edc.72971"
+        ],
+        "x": 854,
+        "y": 119,
+        "w": 412,
+        "h": 342
+    },
+    {
         "id": "1bf54cb25f373f45",
         "type": "group",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "name": "OPC UA send receive test",
         "style": {
             "fill": "#d1d1d1",
@@ -676,34 +694,10 @@
             "1cc9148de434cf5c",
             "6a93e259086552a2"
         ],
-        "x": 14,
-        "y": 39,
-        "w": 812,
-        "h": 242
-    },
-    {
-        "id": "4ad3d049edc39322",
-        "type": "group",
-        "z": "e93a7e25f0e39a23",
-        "name": "UI group",
-        "style": {
-            "stroke": "#ffcf3f",
-            "fill": "#ffefbf",
-            "label": true
-        },
-        "nodes": [
-            "b97bc1c0.cb899",
-            "718cfd195b411ba8",
-            "ef81b0f02ba7b98d",
-            "3cd4308335f3d205",
-            "ee07ae5804356234",
-            "6382720d6b8f61a1",
-            "85965edc.72971"
-        ],
         "x": 94,
-        "y": 119,
-        "w": 412,
-        "h": 342
+        "y": 811.5,
+        "w": 812,
+        "h": 257
     },
     {
         "id": "235674f73e977231",
@@ -3148,6 +3142,52 @@
         "wires": []
     },
     {
+        "id": "72e8f0c547cf14e0",
+        "type": "inject",
+        "z": "cc86b9261dd774ca",
+        "g": "7c0bbc6b66ba5563",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "084ec3837ab5b6d7",
+        "type": "debug",
+        "z": "cc86b9261dd774ca",
+        "g": "7c0bbc6b66ba5563",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 700,
+        "wires": []
+    },
+    {
         "id": "d5f06e68cee866e3",
         "type": "inject",
         "z": "ebe1ddb7db2b1d13",
@@ -3543,9 +3583,7 @@
         "x": 490,
         "y": 540,
         "wires": [
-            [
-                "e07fbc27dc343394"
-            ]
+            []
         ]
     },
     {
@@ -5538,9 +5576,7 @@
         "x": 180,
         "y": 1180,
         "wires": [
-            [
-                "31de9b06fbc6a9c5"
-            ]
+            []
         ]
     },
     {
@@ -6059,7 +6095,6 @@
         "y": 1260,
         "wires": [
             [
-                "2f4f72dc0fdcdef2",
                 "552f429eada488c6"
             ]
         ]
@@ -6117,9 +6152,7 @@
         "x": 160,
         "y": 1320,
         "wires": [
-            [
-                "2f4f72dc0fdcdef2"
-            ]
+            []
         ]
     },
     {
@@ -6158,9 +6191,7 @@
         "x": 930,
         "y": 1260,
         "wires": [
-            [
-                "428e69e2daa536e5"
-            ]
+            []
         ]
     },
     {
@@ -6217,7 +6248,7 @@
     {
         "id": "3d6e7792728aad00",
         "type": "function",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "name": "function 1",
         "func": "msg.payload = [\n    {\n        \"Name\": \"Kazuhito Yokoi\",\n        \"Age\": \"35\",\n        \"Favourite Color\": \"red\",\n        \"Date Of Birth\": \"12/09/1983\"\n    },\n    {\n        \"Name\": \"Oli Bob\",\n        \"Age\": \"12\",\n        \"Favourite Color\": \"cyan\",\n        \"Date Of Birth\": \"12/08/2017\"\n    }\n]\nreturn msg;",
         "outputs": 1,
@@ -6225,8 +6256,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 220,
+        "x": 1440,
+        "y": 300,
         "wires": [
             [
                 "347845dd7d206075"
@@ -6236,7 +6267,7 @@
     {
         "id": "3f120fa485284429",
         "type": "inject",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "name": "",
         "props": [
             {
@@ -6254,8 +6285,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 620,
-        "y": 160,
+        "x": 1380,
+        "y": 240,
         "wires": [
             [
                 "3d6e7792728aad00"
@@ -6265,7 +6296,7 @@
     {
         "id": "347845dd7d206075",
         "type": "ui_table",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "group": "c5462480faa4316e",
         "name": "",
         "order": 1,
@@ -6274,14 +6305,14 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 810,
-        "y": 180,
+        "x": 1570,
+        "y": 260,
         "wires": []
     },
     {
         "id": "b97bc1c0.cb899",
         "type": "ui_template",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "group": "c982fbb8.1deb38",
         "name": "Clock Toolbar",
@@ -6292,7 +6323,7 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "global",
-        "x": 200,
+        "x": 960,
         "y": 200,
         "wires": [
             []
@@ -6301,7 +6332,7 @@
     {
         "id": "718cfd195b411ba8",
         "type": "ui_switch",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "name": "",
         "label": "LIGHT",
@@ -6325,7 +6356,7 @@
         "offcolor": "grey",
         "animate": true,
         "className": "",
-        "x": 170,
+        "x": 930,
         "y": 240,
         "wires": [
             []
@@ -6334,7 +6365,7 @@
     {
         "id": "ef81b0f02ba7b98d",
         "type": "ui_template",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "group": "4a01dad1247a7393",
         "name": "But1",
@@ -6347,7 +6378,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 190,
+        "x": 950,
         "y": 360,
         "wires": [
             [
@@ -6358,7 +6389,7 @@
     {
         "id": "3cd4308335f3d205",
         "type": "ui_switch",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "name": "",
         "label": "PUMP",
@@ -6382,7 +6413,7 @@
         "offcolor": "grey",
         "animate": true,
         "className": "",
-        "x": 170,
+        "x": 930,
         "y": 280,
         "wires": [
             []
@@ -6391,7 +6422,7 @@
     {
         "id": "ee07ae5804356234",
         "type": "debug",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "name": "",
         "active": true,
@@ -6401,14 +6432,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 390,
+        "x": 1150,
         "y": 400,
         "wires": []
     },
     {
         "id": "6382720d6b8f61a1",
         "type": "ui_template",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "group": "4a01dad1247a7393",
         "name": "But2",
@@ -6421,7 +6452,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 190,
+        "x": 950,
         "y": 420,
         "wires": [
             [
@@ -6432,7 +6463,7 @@
     {
         "id": "85965edc.72971",
         "type": "ui_template",
-        "z": "e93a7e25f0e39a23",
+        "z": "18cf0a2502a0767f",
         "g": "4ad3d049edc39322",
         "group": "2a745e6b.07df92",
         "name": "Dashboard Theme : Modern Dark",
@@ -6445,7 +6476,7 @@
         "resendOnRefresh": false,
         "templateScope": "global",
         "className": "",
-        "x": 260,
+        "x": 1020,
         "y": 160,
         "wires": [
             []
@@ -7459,114 +7490,6 @@
         "wires": []
     },
     {
-        "id": "7a502fa6acce11cd",
-        "type": "mqtt out",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "",
-        "topic": "light1",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 370,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "80fb122d65602a1a",
-        "type": "ui_switch",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "c5462480faa4316e",
-        "order": 2,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "on",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "off",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 190,
-        "y": 280,
-        "wires": [
-            [
-                "7a502fa6acce11cd"
-            ]
-        ]
-    },
-    {
-        "id": "1a2b731438b545ca",
-        "type": "mqtt out",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "",
-        "topic": "fog1",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 370,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "6b0c2201aa54fdf9",
-        "type": "ui_switch",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "c5462480faa4316e",
-        "order": 3,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "on",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "off",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            [
-                "1a2b731438b545ca"
-            ]
-        ]
-    },
-    {
         "id": "3b393e4b1a308f0e",
         "type": "ui_chart",
         "z": "10938d45dccd01ac",
@@ -7702,45 +7625,6 @@
         ]
     },
     {
-        "id": "cbe4c73bbafbd565",
-        "type": "mqtt in",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "",
-        "topic": "sensors",
-        "qos": "0",
-        "datatype": "json",
-        "broker": "62af3d522a4f79d4",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 390,
-        "y": 520,
-        "wires": [
-            [
-                "6451cb107aa6e328"
-            ]
-        ]
-    },
-    {
-        "id": "6451cb107aa6e328",
-        "type": "debug",
-        "z": "10938d45dccd01ac",
-        "d": true,
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "15237651.20281a",
         "type": "debug",
         "z": "10938d45dccd01ac",
@@ -7750,8 +7634,8 @@
         "active": true,
         "console": "false",
         "complete": "payload",
-        "x": 810,
-        "y": 760,
+        "x": 770,
+        "y": 540,
         "wires": []
     },
     {
@@ -7779,8 +7663,8 @@
         "topic": "",
         "payload": "SELECT TOP (1) [Topic]       ,[Payload]   FROM [Dev].[dbo].[MQTTData]",
         "payloadType": "str",
-        "x": 211.00000381469727,
-        "y": 693.9999980926514,
+        "x": 171.00000381469727,
+        "y": 473.99999809265137,
         "wires": [
             [
                 "eac3e9b1.b2f0e8"
@@ -7812,8 +7696,8 @@
         "topic": "",
         "payload": "INSERT INTO [Dev].[dbo].[MQTTData] (Topic, Payload) VALUES ('Cardinal', 'Tom B. Erichsen' )",
         "payloadType": "str",
-        "x": 213,
-        "y": 745,
+        "x": 173,
+        "y": 525,
         "wires": [
             [
                 "eac3e9b1.b2f0e8"
@@ -7845,8 +7729,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 210,
-        "y": 796,
+        "x": 170,
+        "y": 576,
         "wires": [
             [
                 "fc1afd38.1ad0f"
@@ -7863,8 +7747,8 @@
         "func": "d = new Date,\ndformat = [d.getMonth()+1,\n    d.getDate(),\n    d.getFullYear()].join('/')+' '+\n    [d.getHours(),\n    d.getMinutes(),\n    d.getSeconds()].join(':');\n\ndtstmp = new Date().toString();\npld =       \"UPDATE [Dev].[dbo].[MQTTData] \"\npld = pld + \"Set Timestamp = '\" + dformat + \"' \"\npld = pld + \"WHERE id = 1\"\n\nmsg.payload = pld\nreturn msg;\n\n\n\n\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 350,
-        "y": 796,
+        "x": 310,
+        "y": 576,
         "wires": [
             [
                 "eac3e9b1.b2f0e8"
@@ -7896,8 +7780,8 @@
         "topic": "",
         "payload": "2",
         "payloadType": "num",
-        "x": 211,
-        "y": 852,
+        "x": 171,
+        "y": 632,
         "wires": [
             [
                 "1528d6ba.7db449"
@@ -7914,8 +7798,8 @@
         "func": "pld =       \"SELECT ID, Topic, Payload, Timestamp \"\npld = pld + \"FROM [Dev].[dbo].[MQTTData] \"\npld = pld + \"WHERE id = \" + msg.payload\n\nmsg.payload = pld\nreturn msg;\n\n\n\n\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 351,
-        "y": 852,
+        "x": 311,
+        "y": 632,
         "wires": [
             [
                 "eac3e9b1.b2f0e8"
@@ -7932,8 +7816,8 @@
         "func": "d = new Date(),\ndformat = [d.getMonth()+1,\n    d.getDate(),\n    d.getFullYear()].join('/')+' '+\n    [d.getHours(),\n    d.getMinutes(),\n    d.getSeconds()].join(':');\n\npld =       \"INSERT INTO [Dev].[dbo].[MQTTData] \"\npld = pld + \"(Topic, Payload, Timestamp) \"\npld = pld + \"VALUES ('\" + msg.topic + \"', '\" + msg.payload + \"', '\" + dformat + \"')\"\n\nmsg.topic = ''\nmsg.payload = pld\nreturn msg;\n\n\n\n\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 344,
-        "y": 902,
+        "x": 304,
+        "y": 682,
         "wires": [
             [
                 "eac3e9b1.b2f0e8",
@@ -7990,8 +7874,8 @@
                 }
             }
         ],
-        "x": 620,
-        "y": 640,
+        "x": 580,
+        "y": 420,
         "wires": [
             []
         ]
@@ -8007,8 +7891,8 @@
         "outField": "payload",
         "query": "",
         "parseMustache": true,
-        "x": 579,
-        "y": 761,
+        "x": 539,
+        "y": 541,
         "wires": [
             [
                 "15237651.20281a"
@@ -8883,42 +8767,6 @@
         ]
     },
     {
-        "id": "daa2821c44333a0d",
-        "type": "ui_switch",
-        "z": "7243ab0a14bfa6bd",
-        "d": true,
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "4a01dad1247a7393",
-        "order": 9,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 150,
-        "y": 380,
-        "wires": [
-            [
-                "141025338ff6d8ae",
-                "c8739073779464c3"
-            ]
-        ]
-    },
-    {
         "id": "1637ec065825048c",
         "type": "debug",
         "z": "7243ab0a14bfa6bd",
@@ -8930,8 +8778,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 580,
+        "x": 960,
+        "y": 560,
         "wires": []
     },
     {
@@ -8955,8 +8803,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 220,
-        "y": 580,
+        "x": 140,
+        "y": 560,
         "wires": [
             [
                 "f59a2ac92243207b"
@@ -8978,14 +8826,22 @@
         "localkeyfile": "",
         "securitymode": "None",
         "securitypolicy": "None",
-        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "setstatusandtime": false,
+        "keepsessionalive": false,
         "name": "",
-        "x": 600,
-        "y": 580,
+        "x": 740,
+        "y": 560,
         "wires": [
             [
                 "1637ec065825048c"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -9017,11 +8873,11 @@
         "permissionDeleteNode": true,
         "permissionAddNode": true,
         "name": "",
-        "x": 400,
-        "y": 580,
+        "x": 320,
+        "y": 560,
         "wires": [
             [
-                "9fbfb51688b98f10"
+                "499d4c149d8535f1"
             ]
         ]
     },
@@ -9078,17 +8934,33 @@
         ]
     },
     {
+        "id": "499d4c149d8535f1",
+        "type": "OpcUa-Item",
+        "z": "7243ab0a14bfa6bd",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.data1",
+        "datatype": "UInt32",
+        "value": "",
+        "name": "",
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "9fbfb51688b98f10"
+            ]
+        ]
+    },
+    {
         "id": "6d191d67d5fe4a6a",
         "type": "OpcUa-Item",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "item": "ns=2;i=2;",
         "datatype": "Float",
         "value": "",
         "name": "GetTemp",
-        "x": 280,
-        "y": 160,
+        "x": 360,
+        "y": 940,
         "wires": [
             [
                 "106046975beddddd"
@@ -9098,7 +8970,7 @@
     {
         "id": "106046975beddddd",
         "type": "OpcUa-Client",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "endpoint": "d1b40bfe250bcf2e",
@@ -9112,20 +8984,21 @@
         "localkeyfile": "",
         "securitymode": "None",
         "securitypolicy": "None",
-        "folderName4PKI": "",
         "name": "Server opc",
-        "x": 430,
-        "y": 180,
+        "x": 510,
+        "y": 960,
         "wires": [
             [
                 "5929bfd7aec84acb"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
         "id": "d1da7314d988c3fc",
         "type": "inject",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
@@ -9145,8 +9018,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 110,
-        "y": 160,
+        "x": 190,
+        "y": 940,
         "wires": [
             [
                 "6d191d67d5fe4a6a",
@@ -9157,15 +9030,15 @@
     {
         "id": "b2a5cffbb0b483f5",
         "type": "OpcUa-Item",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "item": "ns=2;i=3;",
         "datatype": "Float",
         "value": "",
         "name": "GetPress",
-        "x": 280,
-        "y": 220,
+        "x": 360,
+        "y": 1000,
         "wires": [
             [
                 "1cc9148de434cf5c"
@@ -9175,7 +9048,7 @@
     {
         "id": "dc98e5696f8656a4",
         "type": "OpcUa-Client",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "endpoint": "d1b40bfe250bcf2e",
@@ -9189,20 +9062,21 @@
         "localkeyfile": "",
         "securitymode": "None",
         "securitypolicy": "None",
-        "folderName4PKI": "",
         "name": "Server opc",
-        "x": 430,
-        "y": 80,
+        "x": 510,
+        "y": 860,
         "wires": [
             [
                 "077a16b1ea57c12c"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
         "id": "eb6d7996c5c381cd",
         "type": "inject",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
@@ -9222,8 +9096,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 110,
-        "y": 80,
+        "x": 190,
+        "y": 860,
         "wires": [
             [
                 "c33630d43bd45688"
@@ -9233,7 +9107,7 @@
     {
         "id": "077a16b1ea57c12c",
         "type": "debug",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
@@ -9245,22 +9119,22 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 80,
+        "x": 810,
+        "y": 860,
         "wires": []
     },
     {
         "id": "c33630d43bd45688",
         "type": "OpcUa-Item",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "item": "ns=2;i=2;",
         "datatype": "Float",
         "value": "",
         "name": "GetObject",
-        "x": 280,
-        "y": 80,
+        "x": 360,
+        "y": 860,
         "wires": [
             [
                 "dc98e5696f8656a4"
@@ -9270,7 +9144,7 @@
     {
         "id": "5929bfd7aec84acb",
         "type": "ui_gauge",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
@@ -9292,14 +9166,14 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 740,
-        "y": 180,
+        "x": 820,
+        "y": 960,
         "wires": []
     },
     {
         "id": "a91f078eae0b1d11",
         "type": "ui_gauge",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
@@ -9321,14 +9195,14 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 740,
-        "y": 240,
+        "x": 820,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "1cc9148de434cf5c",
         "type": "OpcUa-Client",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "endpoint": "d1b40bfe250bcf2e",
@@ -9342,26 +9216,27 @@
         "localkeyfile": "",
         "securitymode": "None",
         "securitypolicy": "None",
-        "folderName4PKI": "",
         "name": "Server opc",
-        "x": 430,
-        "y": 240,
+        "x": 510,
+        "y": 1020,
         "wires": [
             [
                 "a91f078eae0b1d11"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
         "id": "6a93e259086552a2",
         "type": "comment",
-        "z": "cc86b9261dd774ca",
+        "z": "7243ab0a14bfa6bd",
         "d": true,
         "g": "1bf54cb25f373f45",
         "name": "",
         "info": "set opc.tcp://<ip from WSL === 172.28.192.1>:<port 4843>",
-        "x": 100,
-        "y": 240,
+        "x": 180,
+        "y": 1020,
         "wires": []
     },
     {
@@ -13603,2192 +13478,6 @@
             [
                 "2c82654baf7005f0"
             ]
-        ]
-    },
-    {
-        "id": "e93a7e25f0e39a23",
-        "type": "tab",
-        "label": "HA",
-        "disabled": true,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "918a016da94047e6",
-        "type": "group",
-        "z": "cc86b9261dd774ca",
-        "name": "Tensorflow test",
-        "style": {
-            "stroke": "#ffC000",
-            "fill": "#ffdf7f",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "92a0fca46a797ca9",
-            "129457156369cf40",
-            "21f2a3c01d56710b",
-            "7bcc3e76b73a6d50",
-            "f92cec681a1c5acd",
-            "7b6da3fccca14116"
-        ],
-        "x": 94,
-        "y": 299,
-        "w": 732,
-        "h": 282
-    },
-    {
-        "id": "52d9ac4746de5028",
-        "type": "group",
-        "z": "e93a7e25f0e39a23",
-        "name": "Home Assistant Group",
-        "style": {
-            "stroke": "#3f93cf",
-            "fill": "#bfdbef",
-            "label": true
-        },
-        "nodes": [
-            "ed643d1496f40952",
-            "19624606d2cdb0d1",
-            "b4c871a64b13821e",
-            "8a04a941fd8257ea",
-            "6590d25547d1f877",
-            "bb8a0b7bb84ca2cd",
-            "7505aebdfa128948",
-            "2296083e1c759304",
-            "9ea7e2a00a8bed5a",
-            "d55437223ba91ddf",
-            "f36b9844a1822b43",
-            "833d496a8ed46fa3",
-            "7006749b56241b1e",
-            "d7d8b6fac43d4017",
-            "c2eb32c31cb21b7a",
-            "a5bf2326f2b335e7",
-            "a545665341ee6c46",
-            "3899c384ce812440",
-            "91819fcc11684241",
-            "73a6a3903112493e",
-            "542e26172cc5e972",
-            "79d9cb3477ac3a13",
-            "84a8f89cf17e4323",
-            "57f7f06f580bd3d9",
-            "1a9bae9c40dd6b03",
-            "3ab4eeeee6eb8488",
-            "d79318420bf3c222",
-            "97a48bd9b32005e6",
-            "66cbf4088c5167a2",
-            "16f4d09443213e56",
-            "07636ac8dea90423",
-            "f245ee635976d34e",
-            "ccb4e5072e899d96",
-            "df387e6ec52cb49a",
-            "42f9fbd4f7ccc580",
-            "7ebac015f992c3b0",
-            "ce535a86eb0df2ba",
-            "53d33c39501e7600"
-        ],
-        "x": 54,
-        "y": 599,
-        "w": 992,
-        "h": 1082
-    },
-    {
-        "id": "055a56be1d55a37f",
-        "type": "server",
-        "d": true,
-        "name": "Home Assistant",
-        "version": 5,
-        "addon": false,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": true,
-        "heartbeat": false,
-        "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
-        "statusSeparator": "at: ",
-        "statusYear": "hidden",
-        "statusMonth": "short",
-        "statusDay": "numeric",
-        "statusHourCycle": "h23",
-        "statusTimeFormat": "h:m",
-        "enableGlobalContextStore": true
-    },
-    {
-        "id": "ee140e3d.50e31",
-        "type": "server",
-        "d": true,
-        "name": "Home Assistant",
-        "version": 5,
-        "addon": false,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": false,
-        "heartbeat": false,
-        "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
-        "statusSeparator": "at: ",
-        "statusYear": "hidden",
-        "statusMonth": "short",
-        "statusDay": "numeric",
-        "statusHourCycle": "h23",
-        "statusTimeFormat": "h:m",
-        "enableGlobalContextStore": true
-    },
-    {
-        "id": "c396ec35b0f67687",
-        "type": "onvif-config",
-        "xaddress": "192.168.0.100",
-        "port": "80",
-        "timeout": "30",
-        "checkConnectionInterval": "5",
-        "name": "mycamera"
-    },
-    {
-        "id": "c6b46a46.8067f8",
-        "type": "onvif-config",
-        "d": true,
-        "xaddress": "192.168.1.174",
-        "port": "80",
-        "timeout": "3",
-        "checkConnectionInterval": "5",
-        "name": "Hikvision"
-    },
-    {
-        "id": "e6c78b2e.fe4dc8",
-        "type": "onvif-config",
-        "d": true,
-        "xaddress": "192.168.1.200",
-        "port": "",
-        "timeout": "3",
-        "checkConnectionInterval": "5",
-        "name": "MyCamKitchen"
-    },
-    {
-        "id": "479392933b66c5e9",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "sensor config for TempC",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "TempC"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "90b65f29700a7d7c",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "sensor config for Temp2",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Temp2"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "0da2588072f89088",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "sensor config for Humid",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Humid"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "93ceea17e2e8a203",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "sensor config for Temp1",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Temp1"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "92daad02073d2ecd",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "sensor config for Level",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Level"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "3f709228cd376b95",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "switch config for LED",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "LED"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "ebb9af2bcb8f4b37",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "switch config for MOTOR1",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "MOTOR1"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "b18b30d73610bb8e",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "switch config for MOTOR2",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "MOTOR2"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "462ee492f7ee27a7",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "switch config for FOG1",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "FOG1"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "55c684c25390496c",
-        "type": "ha-entity-config",
-        "d": true,
-        "server": "055a56be1d55a37f",
-        "deviceConfig": "",
-        "name": "binary sensor config for DimLight",
-        "version": "6",
-        "entityType": "binary_sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "DimLight"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "9e337f87919f3759",
-        "type": "onvif-config",
-        "xaddress": "localhost",
-        "port": "8000",
-        "timeout": "30",
-        "checkConnectionInterval": "5",
-        "name": ""
-    },
-    {
-        "id": "ebb34674ffd0a375",
-        "type": "s7 endpoint",
-        "d": true,
-        "transport": "iso-on-tcp",
-        "address": "192.168.10.74",
-        "port": "102",
-        "rack": "0",
-        "slot": "2",
-        "localtsaphi": "01",
-        "localtsaplo": "00",
-        "remotetsaphi": "01",
-        "remotetsaplo": "00",
-        "connmode": "rack-slot",
-        "adapter": "",
-        "busaddr": "2",
-        "cycletime": "1000",
-        "timeout": "2000",
-        "name": "",
-        "vartable": [
-            {
-                "addr": "MW2",
-                "name": "counter1"
-            },
-            {
-                "addr": "MW6",
-                "name": "counter2"
-            },
-            {
-                "addr": "M4.0",
-                "name": "reset1"
-            },
-            {
-                "addr": "M4.1",
-                "name": "reset2"
-            }
-        ]
-    },
-    {
-        "id": "92a0fca46a797ca9",
-        "type": "debug",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 670,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "129457156369cf40",
-        "type": "fileinject",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "x": 200,
-        "y": 380,
-        "wires": [
-            [
-                "21f2a3c01d56710b",
-                "7bcc3e76b73a6d50"
-            ]
-        ]
-    },
-    {
-        "id": "21f2a3c01d56710b",
-        "type": "cocossd",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "x": 460,
-        "y": 360,
-        "wires": [
-            [
-                "92a0fca46a797ca9",
-                "f92cec681a1c5acd"
-            ]
-        ]
-    },
-    {
-        "id": "7bcc3e76b73a6d50",
-        "type": "image",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "width": 160,
-        "data": "annotatedInput",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": false,
-        "outputs": 0,
-        "x": 440,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "f92cec681a1c5acd",
-        "type": "image",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "width": 160,
-        "data": "annotatedInput",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": false,
-        "outputs": 0,
-        "x": 700,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "7b6da3fccca14116",
-        "type": "camera",
-        "z": "cc86b9261dd774ca",
-        "d": true,
-        "g": "918a016da94047e6",
-        "name": "",
-        "x": 210,
-        "y": 480,
-        "wires": [
-            [
-                "7bcc3e76b73a6d50",
-                "21f2a3c01d56710b"
-            ]
-        ]
-    },
-    {
-        "id": "a1428a3e.9b4d78",
-        "type": "ONVIF Snapshot",
-        "z": "cc86b9261dd774ca",
-        "g": "7c0bbc6b66ba5563",
-        "name": "ONVIF test",
-        "url": "http://192.168.0.100/cgi-bin/snapshot.cgi?loginuse=admin&loginpas=L2F60D27",
-        "username": "admin",
-        "password": "L2F60D27",
-        "x": 390,
-        "y": 660,
-        "wires": [
-            [
-                "084ec3837ab5b6d7"
-            ]
-        ]
-    },
-    {
-        "id": "72e8f0c547cf14e0",
-        "type": "inject",
-        "z": "cc86b9261dd774ca",
-        "g": "7c0bbc6b66ba5563",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 660,
-        "wires": [
-            [
-                "a1428a3e.9b4d78"
-            ]
-        ]
-    },
-    {
-        "id": "084ec3837ab5b6d7",
-        "type": "debug",
-        "z": "cc86b9261dd774ca",
-        "g": "7c0bbc6b66ba5563",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "8aa78e50c006b890",
-        "type": "onvif-device",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "deviceConfig": "c396ec35b0f67687",
-        "action": "getSystemDateAndTime",
-        "x": 390,
-        "y": 1600,
-        "wires": [
-            [
-                "a1533867a6655dad"
-            ]
-        ]
-    },
-    {
-        "id": "8609f28f7d2bc017",
-        "type": "inject",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 1600,
-        "wires": [
-            [
-                "8aa78e50c006b890",
-                "d30f08a80eda17aa"
-            ]
-        ]
-    },
-    {
-        "id": "a1533867a6655dad",
-        "type": "debug",
-        "z": "cc86b9261dd774ca",
-        "name": "debug 13",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1600,
-        "wires": []
-    },
-    {
-        "id": "d30f08a80eda17aa",
-        "type": "onvif-media",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "deviceConfig": "c396ec35b0f67687",
-        "profileToken": "",
-        "profileName": "",
-        "videoEncoderConfigToken": "",
-        "videoEncoderConfigName": "",
-        "videoEncoderConfigEncoding": "",
-        "action": "getVideoSources",
-        "protocol": "",
-        "stream": "RTP-Unicast",
-        "x": 390,
-        "y": 1660,
-        "wires": [
-            [
-                "9f54dc41bcf5d244"
-            ]
-        ]
-    },
-    {
-        "id": "271872b987e47747",
-        "type": "inject",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 1820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "19d5353da5aaa884",
-        "type": "debug",
-        "z": "cc86b9261dd774ca",
-        "name": "debug 14",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 1820,
-        "wires": []
-    },
-    {
-        "id": "ee0095c710080ee9",
-        "type": "ONVIF Snapshot",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "url": "http://192.168.0.100/onvif/imaging_service",
-        "username": "admin",
-        "password": "L2F60D27",
-        "x": 480,
-        "y": 1920,
-        "wires": [
-            [
-                "19d5353da5aaa884"
-            ]
-        ]
-    },
-    {
-        "id": "01484b306e29a795",
-        "type": "inject",
-        "z": "cc86b9261dd774ca",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 1920,
-        "wires": [
-            [
-                "ee0095c710080ee9"
-            ]
-        ]
-    },
-    {
-        "id": "9f54dc41bcf5d244",
-        "type": "debug",
-        "z": "cc86b9261dd774ca",
-        "name": "debug 15",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1660,
-        "wires": []
-    },
-    {
-        "id": "e07fbc27dc343394",
-        "type": "api-call-service",
-        "z": "ebe1ddb7db2b1d13",
-        "g": "e46a4f3b10c5a3b0",
-        "name": "line notify",
-        "server": "ee140e3d.50e31",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "line_notification",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"data\":{\"file\":\"/config/www/cctv/frontdoor.jpg\"},\"message\":\"มีคนเปิดประตูหน้าบ้าน\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 640,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ed643d1496f40952",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 1,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 250,
-        "y": 720,
-        "wires": [
-            [
-                "19624606d2cdb0d1"
-            ]
-        ]
-    },
-    {
-        "id": "19624606d2cdb0d1",
-        "type": "switch",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "on",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "off",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 490,
-        "y": 720,
-        "wires": [
-            [
-                "b4c871a64b13821e"
-            ],
-            [
-                "b4c871a64b13821e"
-            ]
-        ]
-    },
-    {
-        "id": "b4c871a64b13821e",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "8a04a941fd8257ea",
-        "type": "inject",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "50",
-        "payloadType": "str",
-        "x": 210,
-        "y": 640,
-        "wires": [
-            [
-                "66cbf4088c5167a2"
-            ]
-        ]
-    },
-    {
-        "id": "6590d25547d1f877",
-        "type": "mqtt in",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "topic": "data",
-        "qos": "0",
-        "datatype": "json",
-        "broker": "62af3d522a4f79d4",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 190,
-        "y": 840,
-        "wires": [
-            [
-                "bb8a0b7bb84ca2cd"
-            ]
-        ]
-    },
-    {
-        "id": "bb8a0b7bb84ca2cd",
-        "type": "json",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 330,
-        "y": 840,
-        "wires": [
-            [
-                "16f4d09443213e56",
-                "07636ac8dea90423",
-                "ccb4e5072e899d96"
-            ]
-        ]
-    },
-    {
-        "id": "7505aebdfa128948",
-        "type": "mqtt out",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "LED",
-        "topic": "light1",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 550,
-        "y": 1100,
-        "wires": []
-    },
-    {
-        "id": "2296083e1c759304",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "LED",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.led",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 330,
-        "y": 1120,
-        "wires": [
-            [
-                "7505aebdfa128948",
-                "a5bf2326f2b335e7"
-            ],
-            [
-                "7505aebdfa128948",
-                "a5bf2326f2b335e7"
-            ]
-        ]
-    },
-    {
-        "id": "9ea7e2a00a8bed5a",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 1140,
-        "wires": []
-    },
-    {
-        "id": "d55437223ba91ddf",
-        "type": "mqtt out",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR1",
-        "topic": "motor1",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 560,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "f36b9844a1822b43",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR1",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "fan.motor1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 340,
-        "y": 1240,
-        "wires": [
-            [
-                "d55437223ba91ddf",
-                "a545665341ee6c46"
-            ],
-            [
-                "d55437223ba91ddf",
-                "a545665341ee6c46"
-            ]
-        ]
-    },
-    {
-        "id": "833d496a8ed46fa3",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 1260,
-        "wires": []
-    },
-    {
-        "id": "7006749b56241b1e",
-        "type": "mqtt out",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR2",
-        "topic": "motor2",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 560,
-        "y": 1340,
-        "wires": []
-    },
-    {
-        "id": "d7d8b6fac43d4017",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR2",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.motor2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 340,
-        "y": 1360,
-        "wires": [
-            [
-                "7006749b56241b1e",
-                "3899c384ce812440"
-            ],
-            [
-                "7006749b56241b1e",
-                "3899c384ce812440"
-            ]
-        ]
-    },
-    {
-        "id": "c2eb32c31cb21b7a",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 1400,
-        "wires": []
-    },
-    {
-        "id": "a5bf2326f2b335e7",
-        "type": "function",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "func": "msg.payload = msg.topic + \" : \" + msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 1160,
-        "wires": [
-            [
-                "9ea7e2a00a8bed5a"
-            ]
-        ]
-    },
-    {
-        "id": "a545665341ee6c46",
-        "type": "function",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "func": "msg.payload = msg.topic + \" : \" + msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 1280,
-        "wires": [
-            [
-                "833d496a8ed46fa3"
-            ]
-        ]
-    },
-    {
-        "id": "3899c384ce812440",
-        "type": "function",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "func": "msg.payload = msg.topic + \" : \" + msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 1420,
-        "wires": [
-            [
-                "c2eb32c31cb21b7a"
-            ]
-        ]
-    },
-    {
-        "id": "91819fcc11684241",
-        "type": "mqtt out",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "FOG1",
-        "topic": "fog1",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "62af3d522a4f79d4",
-        "x": 550,
-        "y": 1480,
-        "wires": []
-    },
-    {
-        "id": "73a6a3903112493e",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "FOG1",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.fog1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 330,
-        "y": 1500,
-        "wires": [
-            [
-                "91819fcc11684241",
-                "79d9cb3477ac3a13"
-            ],
-            [
-                "91819fcc11684241",
-                "79d9cb3477ac3a13"
-            ]
-        ]
-    },
-    {
-        "id": "542e26172cc5e972",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 1540,
-        "wires": []
-    },
-    {
-        "id": "79d9cb3477ac3a13",
-        "type": "function",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "func": "msg.payload = msg.topic + \" : \" + msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 1560,
-        "wires": [
-            [
-                "542e26172cc5e972"
-            ]
-        ]
-    },
-    {
-        "id": "84a8f89cf17e4323",
-        "type": "server-state-changed",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Dimlight",
-        "server": "055a56be1d55a37f",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.dimlight",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "0",
-        "halt_if_type": "num",
-        "halt_if_compare": "gte",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 340,
-        "y": 1640,
-        "wires": [
-            [
-                "57f7f06f580bd3d9"
-            ],
-            [
-                "57f7f06f580bd3d9"
-            ]
-        ]
-    },
-    {
-        "id": "57f7f06f580bd3d9",
-        "type": "debug",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 1640,
-        "wires": []
-    },
-    {
-        "id": "1a9bae9c40dd6b03",
-        "type": "api-call-service",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Line Noti ON",
-        "server": "055a56be1d55a37f",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "line_notification",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"LED is on\",\"title\":\"Your Garage Door Friend\",\"target\":\"platform specific\",\"data\":{\"file\":\"/config/image/Airplane.jpg\",\"stkpkgid\":1,\"stkid\":106}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 830,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3ab4eeeee6eb8488",
-        "type": "api-call-service",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Line Noti OFF",
-        "server": "055a56be1d55a37f",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "line_notification",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"LED is off\",\"title\":\"Your Garage Door Friend\",\"target\":\"platform specific\",\"data\":{\"file\":\"/config/image/Airplane.jpg\",\"stkpkgid\":1,\"stkid\":2}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 840,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d79318420bf3c222",
-        "type": "function",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "",
-        "func": "const dt = new Date();\nmsg.payload = {\n    'entity' : msg.topic,\n    'state' : msg.payload,\n    'time' : dt\n};\n\nmsg.path = \"test/\" + dt;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 1060,
-        "wires": [
-            [
-                "97a48bd9b32005e6"
-            ]
-        ]
-    },
-    {
-        "id": "97a48bd9b32005e6",
-        "type": "addFirebase",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "firebaseCertificate": "c21b98997b5aa92e",
-        "client_email": "",
-        "private_key": "",
-        "data": "",
-        "childpath": "path",
-        "propertyType": "msg",
-        "method": "push",
-        "newchildpath": "",
-        "x": 930,
-        "y": 1060,
-        "wires": [
-            [
-                "9ea7e2a00a8bed5a"
-            ]
-        ]
-    },
-    {
-        "id": "66cbf4088c5167a2",
-        "type": "ha-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "TempC",
-        "entityConfig": "479392933b66c5e9",
-        "version": 0,
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 460,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "16f4d09443213e56",
-        "type": "ha-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Temp2",
-        "entityConfig": "90b65f29700a7d7c",
-        "version": 0,
-        "state": "payload.room/temp2",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 490,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "07636ac8dea90423",
-        "type": "ha-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Humid",
-        "entityConfig": "0da2588072f89088",
-        "version": 0,
-        "state": "payload.Humid",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 490,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f245ee635976d34e",
-        "type": "ha-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Temp1",
-        "entityConfig": "93ceea17e2e8a203",
-        "version": 0,
-        "state": "payload.room/temp1",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 490,
-        "y": 840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ccb4e5072e899d96",
-        "type": "ha-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "Level",
-        "entityConfig": "92daad02073d2ecd",
-        "version": 0,
-        "state": "payload.Level",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 490,
-        "y": 1020,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "df387e6ec52cb49a",
-        "type": "ha-switch",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "LED",
-        "version": 0,
-        "inputs": 1,
-        "outputs": 2,
-        "entityConfig": "3f709228cd376b95",
-        "enableInput": true,
-        "outputOnStateChange": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "0",
-                "valueType": "num"
-            }
-        ],
-        "x": 130,
-        "y": 1020,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "42f9fbd4f7ccc580",
-        "type": "ha-switch",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR1",
-        "version": 0,
-        "inputs": 1,
-        "outputs": 2,
-        "entityConfig": "ebb9af2bcb8f4b37",
-        "enableInput": true,
-        "outputOnStateChange": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "0",
-                "valueType": "num"
-            }
-        ],
-        "x": 140,
-        "y": 1080,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "7ebac015f992c3b0",
-        "type": "ha-switch",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "MOTOR2",
-        "version": 0,
-        "inputs": 1,
-        "outputs": 2,
-        "entityConfig": "b18b30d73610bb8e",
-        "enableInput": true,
-        "outputOnStateChange": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "0",
-                "valueType": "num"
-            }
-        ],
-        "x": 140,
-        "y": 1140,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "ce535a86eb0df2ba",
-        "type": "ha-switch",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "FOG1",
-        "version": 0,
-        "inputs": 1,
-        "outputs": 2,
-        "entityConfig": "462ee492f7ee27a7",
-        "enableInput": true,
-        "outputOnStateChange": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "0",
-                "valueType": "num"
-            }
-        ],
-        "x": 130,
-        "y": 1200,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "53d33c39501e7600",
-        "type": "ha-binary-sensor",
-        "z": "e93a7e25f0e39a23",
-        "d": true,
-        "g": "52d9ac4746de5028",
-        "name": "DimLight",
-        "entityConfig": "55c684c25390496c",
-        "version": 0,
-        "state": "0",
-        "stateType": "num",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 140,
-        "y": 1280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "31de9b06fbc6a9c5",
-        "type": "onvif-media",
-        "z": "18cf0a2502a0767f",
-        "d": true,
-        "g": "2fd2bb164f28a9eb",
-        "name": "",
-        "deviceConfig": "9e337f87919f3759",
-        "profileToken": "",
-        "profileName": "",
-        "videoEncoderConfigToken": "",
-        "videoEncoderConfigName": "",
-        "videoEncoderConfigEncoding": "",
-        "action": "getStreamUri",
-        "protocol": "HTTP",
-        "stream": "RTP-Unicast",
-        "x": 350,
-        "y": 1180,
-        "wires": [
-            [
-                "6a3a5c413b35a622"
-            ]
-        ]
-    },
-    {
-        "id": "2f4f72dc0fdcdef2",
-        "type": "onvif-media",
-        "z": "18cf0a2502a0767f",
-        "d": true,
-        "g": "2fd2bb164f28a9eb",
-        "name": "",
-        "deviceConfig": "9e337f87919f3759",
-        "profileToken": "",
-        "profileName": "",
-        "videoEncoderConfigToken": "",
-        "videoEncoderConfigName": "",
-        "videoEncoderConfigEncoding": "",
-        "action": "getSnapshotUri",
-        "protocol": "RTSP",
-        "stream": "RTP-Unicast",
-        "x": 350,
-        "y": 1260,
-        "wires": [
-            [
-                "447840385a6e1031",
-                "552f429eada488c6"
-            ]
-        ]
-    },
-    {
-        "id": "38c3bca056801770",
-        "type": "onvif-device",
-        "z": "18cf0a2502a0767f",
-        "d": true,
-        "g": "2fd2bb164f28a9eb",
-        "name": "",
-        "deviceConfig": "9e337f87919f3759",
-        "action": "getDeviceInformation",
-        "x": 350,
-        "y": 1340,
-        "wires": [
-            [
-                "ff4c7e0e0fae3b54"
-            ]
-        ]
-    },
-    {
-        "id": "428e69e2daa536e5",
-        "type": "NotifyImage",
-        "z": "18cf0a2502a0767f",
-        "d": true,
-        "g": "2fd2bb164f28a9eb",
-        "name": "LineNotyImage",
-        "tmsg": "msg.message",
-        "imgfile": "/home/grab.jpg",
-        "AccToken": "BggmSwVip2mh1PUc9sQusUjS8aUlnwZJQpA2Cs8M3yl",
-        "x": 780,
-        "y": 1300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67bfb7ea4fb267c2",
-        "type": "s7 in",
-        "z": "7243ab0a14bfa6bd",
-        "d": true,
-        "endpoint": "ebb34674ffd0a375",
-        "mode": "all",
-        "variable": "",
-        "diff": true,
-        "name": "",
-        "x": 180,
-        "y": 200,
-        "wires": [
-            [
-                "776124ad82ebab25"
-            ]
-        ]
-    },
-    {
-        "id": "141025338ff6d8ae",
-        "type": "s7 out",
-        "z": "7243ab0a14bfa6bd",
-        "d": true,
-        "endpoint": "ebb34674ffd0a375",
-        "variable": "reset1",
-        "name": "",
-        "x": 470,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "c8739073779464c3",
-        "type": "s7 out",
-        "z": "7243ab0a14bfa6bd",
-        "d": true,
-        "endpoint": "ebb34674ffd0a375",
-        "variable": "reset2",
-        "name": "",
-        "x": 470,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "499d4c149d8535f1",
-        "type": "OpcUa-Item",
-        "z": "7243ab0a14bfa6bd",
-        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.GVL.data1",
-        "datatype": "UInt32",
-        "value": "",
-        "name": "",
-        "x": 620,
-        "y": 720,
-        "wires": [
-            []
         ]
     }
 ]
